@@ -2,10 +2,12 @@
 
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\ProfileController;
+use App\Models\BlogPost;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = BlogPost::all();
+    return view('welcome', compact('posts'));
 });
 
 Route::get('/dashboard', function () {

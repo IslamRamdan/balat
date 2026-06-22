@@ -419,89 +419,17 @@
 
             <!-- Image Cards -->
             <div class="row g-3" id="galleryGrid">
-                <div class="col-lg-4 col-md-6 gallery-item bathroom" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="gallery-card" onclick="openLightbox(0)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/1.jpeg" alt="تركيب سيراميك حمام جدة - أعمال معلم البلاط" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>حمام فاخر</span></div>'" />
+                @foreach ($posts as $index => $post)
+                    <div class="col-lg-4 col-md-6 gallery-item bathroom" data-aos="zoom-in"
+                        data-aos-delay="{{ $index * 100 }}">
+                        <div class="gallery-card" onclick="openLightbox({{ $index }})">
+                            <div class="gallery-img-wrap">
+                                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }} - أعمالنا"
+                                    loading="lazy" />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item floor" data-aos="zoom-in" data-aos-delay="80">
-                    <div class="gallery-card" onclick="openLightbox(1)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/2.jpeg" alt="تركيب بورسلان أرضيات جدة" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>أرضية بورسلان</span></div>'" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item kitchen" data-aos="zoom-in" data-aos-delay="160">
-                    <div class="gallery-card" onclick="openLightbox(2)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/3.jpeg" alt="تشطيب مطبخ بورسلان جدة" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>مطبخ مشطّب</span></div>'" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item marble" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="gallery-card" onclick="openLightbox(3)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/4.jpeg" alt="تركيب رخام طبيعي جدة" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>رخام طبيعي</span></div>'" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item bathroom" data-aos="zoom-in" data-aos-delay="80">
-                    <div class="gallery-card" onclick="openLightbox(4)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/5.jpeg" alt="سيراميك حمام مودرن جدة" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>حمام عصري</span></div>'" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item floor" data-aos="zoom-in" data-aos-delay="160">
-                    <div class="gallery-card" onclick="openLightbox(5)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/6.jpeg" alt="أرضية جرانيت منزل فيلا جدة" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>فيلا فاخرة</span></div>'" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item marble" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="gallery-card" onclick="openLightbox(6)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/7.jpeg" alt="رخام أبيض صالة استقبال" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>صالة رخام</span></div>'" />
-                        </div>
-                        <div class="gallery-info"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item kitchen" data-aos="zoom-in" data-aos-delay="80">
-                    <div class="gallery-card" onclick="openLightbox(7)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/8.jpeg" alt="تشطيب مطبخ حجر طبيعي" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>مطبخ حجري</span></div>'" />
-                        </div>
-                        <div class="gallery-info"></div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item floor" data-aos="zoom-in" data-aos-delay="160">
-                    <div class="gallery-card" onclick="openLightbox(8)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/9.jpeg" alt="أرضية بورسلان تصميم هندسي" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>أرضيات</span></div>'" />
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 gallery-item bathroom" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="gallery-card" onclick="openLightbox(9)">
-                        <div class="gallery-img-wrap">
-                            <img src="Css/10.jpeg" alt="حمام بورسلان فاخر جدة" loading="lazy"
-                                onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'><i class=\'fas fa-image\'></i><span>أرضيات</span></div>'" />
-
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
